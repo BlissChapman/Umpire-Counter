@@ -59,6 +59,8 @@ class ViewController: UIViewController {
     var homeTeamCounter = Counter()
     var awayTeamCounter = Counter()
     var inningLabelCounter = Counter()
+    var oldValueOfBalls = 0
+    var oldValueOfStrikes = 0
     
     var homePitcherTotalBalls = Counter()
     var homePitcherTotalStrikes = Counter()
@@ -131,23 +133,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clockTapped(sender: UIButton) {
-        println(clockButton.titleLabel.text)
+        println(clockButton.titleLabel)
         println(clockString)
-        if sender.titleLabel.text == "START CLOCK" {
+        if sender.titleLabel == "START CLOCK" {
             isPaused = false
             buttonTitle = "PAUSE"
             startClock()
             return
         }
         
-        if clockButton.titleLabel.text == "PAUSE " + clockString {
+        if clockButton.titleLabel == "PAUSE " + clockString {
             isPaused = true
             clockButton.setTitle("CONTINUE " + clockString, forState: UIControlState.Normal)
             stoppedTime = NSDate.timeIntervalSinceReferenceDate()
             return
         }
         
-        if clockButton.titleLabel.text == "CONTINUE " + clockString {
+        if clockButton.titleLabel == "CONTINUE " + clockString {
             isPaused = false
             buttonTitle = "PAUSE"
             offset = offset + NSDate.timeIntervalSinceReferenceDate() - stoppedTime
@@ -179,6 +181,7 @@ class ViewController: UIViewController {
         } else if strikeCounter.count == 2 {
             strikeCounter.decrement()
         } else if strikeCounter.count == 0 {
+            ballCounter.count = oldValueOfBalls
             strikeCounter.count = 2
             if outCounter.count == 1 {
                 outCounter.decrement()
@@ -206,6 +209,7 @@ class ViewController: UIViewController {
         myUndoManager.registerUndoWithTarget(self, selector: "undoSteeeerike", object: nil)
         vibrate()
         if strikeCounter.count < 2 {
+            var oldValueOfStrikes = strikeCounter.count
             strikeCounter.increment()
             if isTop == true {
                 homePitcherTotalStrikes.increment()
@@ -214,6 +218,7 @@ class ViewController: UIViewController {
             }
             reloadBallsAndStrikes()
         } else {
+            oldValueOfBalls = ballCounter.count
             outCounter.increment()
             if isTop == true {
                 homePitcherTotalStrikes.increment()
@@ -266,6 +271,7 @@ class ViewController: UIViewController {
             return
         }
         if ballCounter.count == 0 {
+            strikeCounter.count = oldValueOfStrikes
             ballCounter.count = 3
             if isTop == true {
                 homePitcherTotalBalls.decrement()
@@ -289,6 +295,7 @@ class ViewController: UIViewController {
             }
             reloadBallsAndStrikes()
         } else {
+            oldValueOfStrikes = strikeCounter.count
             if isTop == true {
                 homePitcherTotalBalls.increment()
             } else {
