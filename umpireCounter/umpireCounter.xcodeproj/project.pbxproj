@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8E40356019B1EA1C00A911AE /* ManualOverrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40355F19B1EA1C00A911AE /* ManualOverrideViewController.swift */; };
-		8E40356219B6506F00A911AE /* manualOverrideDownArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E40356119B6506F00A911AE /* manualOverrideDownArrow.png */; };
-		8E40356419B6507800A911AE /* manualOverrideUpArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E40356319B6507800A911AE /* manualOverrideUpArrow.png */; };
 		8E4A49D019AE270000F334C9 /* BackgroundOverrideFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E4A49CF19AE270000F334C9 /* BackgroundOverrideFinal.png */; };
+		8E4D4C9A19BABD6200A4A911 /* manualOverrideUpArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E4D4C9919BABD6200A4A911 /* manualOverrideUpArrow.png */; };
+		8E4D4C9C19BABD7600A4A911 /* manualOverrideDownArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E4D4C9B19BABD7600A4A911 /* manualOverrideDownArrow.png */; };
 		8E73D1D819AA5F1200A4B25E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D1D719AA5F1200A4B25E /* AppDelegate.swift */; };
 		8E73D1DA19AA5F1200A4B25E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D1D919AA5F1200A4B25E /* ViewController.swift */; };
 		8E73D1DD19AA5F1200A4B25E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E73D1DB19AA5F1200A4B25E /* Main.storyboard */; };
@@ -33,9 +33,9 @@
 
 /* Begin PBXFileReference section */
 		8E40355F19B1EA1C00A911AE /* ManualOverrideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManualOverrideViewController.swift; path = ../ManualOverrideViewController.swift; sourceTree = "<group>"; };
-		8E40356119B6506F00A911AE /* manualOverrideDownArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = manualOverrideDownArrow.png; path = ../../../../Downloads/manualOverrideDownArrow.png; sourceTree = "<group>"; };
-		8E40356319B6507800A911AE /* manualOverrideUpArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = manualOverrideUpArrow.png; path = ../../../../Downloads/manualOverrideUpArrow.png; sourceTree = "<group>"; };
 		8E4A49CF19AE270000F334C9 /* BackgroundOverrideFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundOverrideFinal.png; sourceTree = "<group>"; };
+		8E4D4C9919BABD6200A4A911 /* manualOverrideUpArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manualOverrideUpArrow.png; sourceTree = "<group>"; };
+		8E4D4C9B19BABD7600A4A911 /* manualOverrideDownArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manualOverrideDownArrow.png; sourceTree = "<group>"; };
 		8E73D1D219AA5F1200A4B25E /* umpireCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = umpireCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E73D1D619AA5F1200A4B25E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E73D1D719AA5F1200A4B25E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		8E73D1D519AA5F1200A4B25E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8E40356319B6507800A911AE /* manualOverrideUpArrow.png */,
-				8E40356119B6506F00A911AE /* manualOverrideDownArrow.png */,
+				8E4D4C9919BABD6200A4A911 /* manualOverrideUpArrow.png */,
+				8E4D4C9B19BABD7600A4A911 /* manualOverrideDownArrow.png */,
 				8EA737FA19AE523400001D47 /* uparrowFINALFINAL.png */,
 				8EA737F819AE522D00001D47 /* downarrowFINALFINAL.png */,
 				8E4A49CF19AE270000F334C9 /* BackgroundOverrideFinal.png */,
@@ -213,11 +213,11 @@
 			files = (
 				8EA737FB19AE523400001D47 /* uparrowFINALFINAL.png in Resources */,
 				8E4A49D019AE270000F334C9 /* BackgroundOverrideFinal.png in Resources */,
+				8E4D4C9A19BABD6200A4A911 /* manualOverrideUpArrow.png in Resources */,
 				8EA737F919AE522D00001D47 /* downarrowFINALFINAL.png in Resources */,
-				8E40356419B6507800A911AE /* manualOverrideUpArrow.png in Resources */,
 				8E73D1DD19AA5F1200A4B25E /* Main.storyboard in Resources */,
 				8E73D1DF19AA5F1200A4B25E /* Images.xcassets in Resources */,
-				8E40356219B6506F00A911AE /* manualOverrideDownArrow.png in Resources */,
+				8E4D4C9C19BABD7600A4A911 /* manualOverrideDownArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
