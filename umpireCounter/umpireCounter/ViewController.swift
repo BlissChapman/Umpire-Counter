@@ -59,8 +59,11 @@ class ViewController: UIViewController {
     var homeTeamCounter = Counter()
     var awayTeamCounter = Counter()
     var inningLabelCounter = Counter()
+    
     var oldValueOfBalls = 0
     var oldValueOfStrikes = 0
+    var oldValueOfTotalBalls = 0
+    var oldValueOfTotalStrikes = 0
     
     var homePitcherTotalBalls = Counter()
     var homePitcherTotalStrikes = Counter()
@@ -376,12 +379,34 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func resetPitchCount(sender: AnyObject) {
-        vibrate()
+    func resetPitchCountUndo () {
+        println("undoResetPitchCount has been called")
+        println("My 'old value' for total strikes is now \(oldValueOfTotalStrikes)")
+        
         if isTop == true {
+            homePitcherTotalBalls.count = oldValueOfTotalBalls
+            homePitcherTotalStrikes.count = oldValueOfTotalStrikes
+        } else {
+            awayPitcherTotalBalls.count = oldValueOfTotalBalls
+            awayPitcherTotalStrikes.count = oldValueOfTotalStrikes
+        }
+        reloadTotalBallsAndStrikes()
+    }
+    
+    @IBAction func resetPitchCount(sender: AnyObject) {
+        myUndoManager.registerUndoWithTarget(self, selector: "resetPitchCountUndo", object: nil)
+        if isTop == true {
+            var oldValueOfTotalBalls = homePitcherTotalBalls.count
+            var oldValueOfTotalStrikes = homePitcherTotalStrikes.count
+            println(oldValueOfTotalStrikes)
+
             homePitcherTotalBalls.reset()
             homePitcherTotalStrikes.reset()
+            println("after the resets have been called on the label, the value of my strikes is still \(oldValueOfTotalStrikes)")
         } else {
+            var oldValueOfTotalBalls = awayPitcherTotalBalls.count
+            var oldValueOfTotalStrikes = awayPitcherTotalStrikes.count
+            println("else method that shouldn't be called is being called and screwing with me.")
             awayPitcherTotalBalls.reset()
             awayPitcherTotalStrikes.reset()
         }
@@ -443,21 +468,28 @@ class ViewController: UIViewController {
     }
     
     func minusInning () {
+        strikeCounter.count = oldValueOfStrikes
+        ballCounter.count = oldValueOfBalls
+        reloadBallsAndStrikes()
         if isTop == false {
             isTop = !isTop
             downArrow.hidden = true
             upArrow.hidden = false
         } else {
-            isTop = !isTop
-            downArrow.hidden = false
-            upArrow.hidden = true
-            inningLabelCounter.decrement()
+            if inningLabelCounter.count > 0 {
+                inningLabelCounter.decrement()
+                isTop = !isTop
+                downArrow.hidden = false
+                upArrow.hidden = true
+            }
             inningsLabel.setTitle(String(format: "\(inningLabelCounter.count + 1)"), forState: nil)
         }
     }
     
     func updateInnings (){
         myUndoManager.registerUndoWithTarget(self, selector: "minusInning", object: nil)
+        oldValueOfStrikes = strikeCounter.count
+        oldValueOfBalls = ballCounter.count
         if inningLabelCounter.count >= 8 && homeTeamCounter.count != awayTeamCounter.count {
             if isTop == false {
                 println("Game Over")
