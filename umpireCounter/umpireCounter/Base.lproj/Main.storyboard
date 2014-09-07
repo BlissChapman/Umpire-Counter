@@ -1714,9 +1714,9 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykY-Vn-ncG">
-                                <rect key="frame" x="274" y="203" width="53" height="30"/>
-                                <state key="normal" title="Unwind">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykY-Vn-ncG" userLabel="Back">
+                                <rect key="frame" x="211" y="261" width="35" height="30"/>
+                                <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1732,6 +1732,7 @@
                             <constraint firstItem="mBD-5l-9Pc" firstAttribute="trailing" secondItem="l0v-f2-4nm" secondAttribute="trailing" id="1Hd-M5-nrH">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstAttribute="centerX" secondItem="ykY-Vn-ncG" secondAttribute="centerX" id="1mc-Z4-Et2"/>
                             <constraint firstItem="VvJ-aJ-jCZ" firstAttribute="top" secondItem="qgD-Tu-g29" secondAttribute="bottom" constant="40" id="2A3-CZ-jss">
                                 <variation key="widthClass=compact" constant="31"/>
                             </constraint>
@@ -1769,6 +1770,7 @@
                                 <variation key="widthClass=compact" constant="-5"/>
                             </constraint>
                             <constraint firstItem="JoF-d9-ZFg" firstAttribute="leading" secondItem="RVv-l7-u4W" secondAttribute="leading" constant="-100" id="FDM-u3-u9G"/>
+                            <constraint firstAttribute="centerY" secondItem="ykY-Vn-ncG" secondAttribute="centerY" id="GP7-Mp-AKE"/>
                             <constraint firstItem="I5U-bG-taT" firstAttribute="centerX" secondItem="JND-g3-KtX" secondAttribute="centerX" id="HVk-Ab-hSz"/>
                             <constraint firstItem="eMe-xl-MrC" firstAttribute="leading" secondItem="RVv-l7-u4W" secondAttribute="leadingMargin" constant="-75" id="IZk-a3-IjR">
                                 <variation key="widthClass=compact" constant="0.0"/>
