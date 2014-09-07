@@ -86,6 +86,13 @@ class ManualOverrideViewController: UIViewController {
         inningLabel.text = String(1)
         
     }
+    /*
+    @IBAction func backToGameTriggered(sender: AnyObject) {
+        println("backToGame was triggered")
+        self.performSegueWithIdentifier("unwindBackToMainView", sender: self)
+    }
+    */
+    
     
     
     func updateLabels (){
@@ -126,6 +133,7 @@ class ManualOverrideViewController: UIViewController {
         let double = homeTeamStepper.value
         let integer = Int(double)
         homeTeamLabel.text = String(integer)
+        homeTeamCounter.count = integer
     }
     
     @IBAction func awayTeamScoreOveridden(sender: AnyObject) {

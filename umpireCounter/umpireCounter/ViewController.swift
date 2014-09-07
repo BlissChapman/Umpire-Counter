@@ -578,6 +578,24 @@ class ViewController: UIViewController {
             self.dismissViewControllerAnimated(true, completion: nil)
         
     }*/
+    /*
+    if ([segue.sourceViewController isKindOfClass:[NTRColorsTableViewController class]]) {
+    NTRColorsTableViewController *colorsViewConroller = segue.sourceViewController;
+    // if the user clicked Cancel, we don't want to change the color
+    if (colorsViewConroller.selectedColor) {
+    self.view.backgroundColor = colorsViewConroller.selectedColor;
+    }
+    }*/
+    
+    @IBAction func unwindBackToMainView(segue: UIStoryboardSegue) {
+        println("unwinding from segue")
+        if segue.sourceViewController.isKindOfClass(ManualOverrideViewController) {
+            let previousController = segue.sourceViewController as ManualOverrideViewController
+            homeTeamCounter.count = previousController.homeTeamCounter.count
+            //update homeTeam score
+        }
+        
+    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {

@@ -1529,18 +1529,6 @@
                                 <items>
                                     <navigationItem id="zFz-WA-UfB">
                                         <nil key="title"/>
-                                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="efx-Gx-eDo">
-                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <state key="normal" title="Back to Game">
-                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <variation key="widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="19"/>
-                                            </variation>
-                                        </button>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1726,6 +1714,15 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykY-Vn-ncG">
+                                <rect key="frame" x="274" y="203" width="53" height="30"/>
+                                <state key="normal" title="Unwind">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WfW-1g-3Tm" kind="unwind" identifier="unwindBackToMainView" unwindAction="unwindBackToMainView:" id="zkz-3g-ICA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1846,6 +1843,7 @@
                             <constraint firstItem="UUD-po-nXD" firstAttribute="top" secondItem="txq-y1-oHt" secondAttribute="bottom" constant="51" id="iCu-3A-06h">
                                 <variation key="widthClass=compact" constant="43"/>
                             </constraint>
+                            <constraint firstAttribute="centerX" secondItem="ykY-Vn-ncG" secondAttribute="centerX" id="k2I-YQ-lxn"/>
                             <constraint firstAttribute="bottomMargin" secondItem="JoF-d9-ZFg" secondAttribute="bottom" constant="-38" id="khr-ue-WpS"/>
                             <constraint firstItem="2Cc-Rr-oXc" firstAttribute="top" secondItem="hAl-Gh-ncR" secondAttribute="bottom" constant="45" id="kk0-r6-UrR">
                                 <variation key="widthClass=compact" constant="54"/>
@@ -1881,6 +1879,7 @@
                             <constraint firstItem="9nO-OJ-zOd" firstAttribute="top" secondItem="NBO-kG-AIe" secondAttribute="bottom" constant="53" id="pL5-tu-efe">
                                 <variation key="widthClass=compact" constant="26"/>
                             </constraint>
+                            <constraint firstAttribute="centerY" secondItem="ykY-Vn-ncG" secondAttribute="centerY" id="pVu-yZ-mfj"/>
                             <constraint firstItem="n5K-SQ-ab4" firstAttribute="leading" secondItem="JND-g3-KtX" secondAttribute="leading" id="pXl-kI-etl">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -1998,8 +1997,6 @@
                                 <exclude reference="uEl-hs-Oau"/>
                                 <exclude reference="yuI-oC-lgh"/>
                                 <exclude reference="yyR-82-d2x"/>
-                                <exclude reference="r3K-FP-ulB"/>
-                                <exclude reference="rEG-eV-iBH"/>
                                 <exclude reference="6an-I6-ilS"/>
                                 <exclude reference="Xiy-O9-Wy2"/>
                                 <exclude reference="e2h-Y2-MT8"/>
@@ -2034,6 +2031,8 @@
                                 <exclude reference="MZr-ey-EMS"/>
                                 <exclude reference="Tc5-Cy-p1U"/>
                                 <exclude reference="5ze-oS-DDZ"/>
+                                <exclude reference="r3K-FP-ulB"/>
+                                <exclude reference="rEG-eV-iBH"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2107,8 +2106,6 @@
                                 <include reference="uEl-hs-Oau"/>
                                 <include reference="yuI-oC-lgh"/>
                                 <include reference="yyR-82-d2x"/>
-                                <include reference="r3K-FP-ulB"/>
-                                <include reference="rEG-eV-iBH"/>
                                 <include reference="6an-I6-ilS"/>
                                 <include reference="Xiy-O9-Wy2"/>
                                 <include reference="e2h-Y2-MT8"/>
@@ -2143,6 +2140,8 @@
                                 <include reference="MZr-ey-EMS"/>
                                 <include reference="Tc5-Cy-p1U"/>
                                 <include reference="5ze-oS-DDZ"/>
+                                <include reference="r3K-FP-ulB"/>
+                                <include reference="rEG-eV-iBH"/>
                             </mask>
                         </variation>
                     </view>
@@ -2168,6 +2167,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYb-5u-15k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WfW-1g-3Tm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1582.5" y="-278"/>
         </scene>
