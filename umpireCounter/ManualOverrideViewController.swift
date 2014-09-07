@@ -140,6 +140,7 @@ class ManualOverrideViewController: UIViewController {
         let double = awayTeamStepper.value
         let integer = Int(double)
         awayTeamLabel.text = String(integer)
+        awayTeamCounter.count = integer
     }
     
     @IBAction func inningsOveridden(sender: AnyObject) {
@@ -183,30 +184,43 @@ class ManualOverrideViewController: UIViewController {
         let double = outsStepper.value
         let integer = Int(double)
         outsLabel.text = String(integer)
+        outCounter.count = integer
     }
     
     @IBAction func ballsOveridden(sender: AnyObject) {
         let double = ballsStepper.value
         let integer = Int(double)
         ballsLabel.text = String(integer)
+        ballCounter.count = integer
     }
     
     @IBAction func strikesOveridden(sender: AnyObject) {
         let double = strikesStepper.value
         let integer = Int(double)
         strikesLabel.text = String(integer)
+        strikeCounter.count = integer
     }
     
     @IBAction func totalStrikesOveridden(sender: AnyObject) {
         let double = totalStrikesStepper.value
         let integer = Int(double)
         totalStrikesLabel.text = String(integer)
+        if isTopOfInning == true {
+            homePitcherTotalStrikes.count = integer
+        } else {
+            awayPitcherTotalStrikes.count = integer
+        }
     }
     
     @IBAction func totalBallsOveridden(sender: AnyObject) {
         let double = totalBallsStepper.value
         let integer = Int(double)
         totalBallsLabel.text = String(integer)
+        if isTopOfInning == true {
+            homePitcherTotalBalls.count = integer
+        } else {
+            awayPitcherTotalBalls.count = integer
+        }
     }
     
     

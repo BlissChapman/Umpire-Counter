@@ -591,15 +591,33 @@ class ViewController: UIViewController {
         println("unwinding from segue")
         if segue.sourceViewController.isKindOfClass(ManualOverrideViewController) {
             let previousController = segue.sourceViewController as ManualOverrideViewController
+            
             homeTeamCounter.count = previousController.homeTeamCounter.count
-            //update homeTeam score
+            homeScoreboard.setTitle(String(format: "\(homeTeamCounter.count)"), forState: nil)
+            awayTeamCounter.count = previousController.awayTeamCounter.count
+            println(awayTeamCounter.count)
+            awayScoreboard.setTitle(String(format: "\(awayTeamCounter.count)"), forState: nil)
+            
+            ballCounter.count = previousController.ballCounter.count
+            strikeCounter.count = previousController.strikeCounter.count
+            homePitcherTotalStrikes.count = previousController.homePitcherTotalStrikes.count
+            homePitcherTotalBalls.count = previousController.homePitcherTotalBalls.count
+            awayPitcherTotalStrikes.count = previousController.awayPitcherTotalStrikes.count
+            awayPitcherTotalBalls.count = previousController.awayPitcherTotalBalls.count
+            reloadBallsAndStrikes()
+            
+            outCounter.count = previousController.outCounter.count
+            updateOuts()
+            inningLabelCounter.count = previousController.inningCounter.count
+            inningsLabel.setTitle(String(format: "\(1 + inningLabelCounter.count)"), forState: nil)
+
+            
         }
         
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        //make sure the values we are passing over are strings.  eventually, these values will be the .count of the variables above String(homeTeamCounter.count)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         println("prepareforSegue was initialized")
         
         let thisManualOverrideViewController = segue.destinationViewController as ManualOverrideViewController
@@ -610,13 +628,13 @@ class ViewController: UIViewController {
         thisManualOverrideViewController.strikeCounter.count = strikeCounter.count
         thisManualOverrideViewController.outCounter.count = outCounter.count
         thisManualOverrideViewController.inningCounter.count = inningLabelCounter.count
-        if isTop == true {
+        //if isTop == true {
             thisManualOverrideViewController.homePitcherTotalBalls.count = homePitcherTotalStrikes.count
             thisManualOverrideViewController.homePitcherTotalStrikes.count = homePitcherTotalStrikes.count
-        } else {
+        //} else {
             thisManualOverrideViewController.awayPitcherTotalBalls.count = awayPitcherTotalBalls.count
             thisManualOverrideViewController.awayPitcherTotalStrikes.count = awayPitcherTotalStrikes.count
-        }
+        //}
         
         thisManualOverrideViewController.isTopOfInning = isTop
     }
