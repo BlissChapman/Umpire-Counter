@@ -62,11 +62,11 @@ class ManualOverrideViewController: UIViewController {
     var awayPitcherTotalBalls = Counter()
     
     var isTopOfInning = true
+    var viewWillAppearHasBeenCalled = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("inside viewDidLoad")
-        
+        println("viewDidLoad has been called")
         // Do any additional setup after loading the view.
     }
     
@@ -75,16 +75,44 @@ class ManualOverrideViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func backButtonTapped(sender: AnyObject) {
+        
+        println("back button was tapped")
+    }
 
     override func viewWillAppear(animated: Bool) {
         //if my variables have the correct values, all that is left is to update the labels and the values the steppers will start counting from to match those of the current game
         println("inside viewWillAppear...")
         
+        if viewWillAppearHasBeenCalled == 0 {
+            println("viewWillAppearHasBeenCalled = 0")
+            inningLabel.text = String(inningCounter.count + 1)
+            if isTopOfInning == true {
+                upArrowOverride.hidden = false
+                downArrowOverride.hidden = true
+            } else {
+                upArrowOverride.hidden = true
+                downArrowOverride.hidden = false
+            }
+        } else {
+            println("viewWillAppearHasBeenCalled = 1")
+            
+            println(inningCounter.count)
+            inningLabel.text = String(inningCounter.count)
+            if isTopOfInning == true {
+                upArrowOverride.hidden = false
+                downArrowOverride.hidden = true
+            } else {
+                upArrowOverride.hidden = true
+                downArrowOverride.hidden = false
+            }
+        }
+        viewWillAppearHasBeenCalled++
+        println("the new value of viewWillAppearHasBeenCalled = \(viewWillAppearHasBeenCalled)")
+        
         updateStartingStepperValues()
         updateLabels()
         //we only want to set the value to 1 at the initialization of the view, not every time the labels are updated.
-        inningLabel.text = String(1)
-        
     }
     /*
     @IBAction func backToGameTriggered(sender: AnyObject) {
@@ -113,7 +141,7 @@ class ManualOverrideViewController: UIViewController {
     func updateStartingStepperValues (){
         homeTeamStepper.value = Double(homeTeamCounter.count)
         awayTeamStepper.value = Double(awayTeamCounter.count)
-        inningStepper.value = Double(inningCounter.count)
+        inningStepper.value = Double(inningCounter.count + 1)
         outsStepper.value = Double(outCounter.count)
         ballsStepper.value = Double(ballCounter.count)
         strikesStepper.value = Double(strikeCounter.count)
@@ -144,40 +172,19 @@ class ManualOverrideViewController: UIViewController {
     }
     
     @IBAction func inningsOveridden(sender: AnyObject) {
-        isTopOfInning = !isTopOfInning
-        println("isTopOfInning = \(isTopOfInning)")
-        var double = inningStepper.value
-        println("inningSteppers value is \(inningStepper.value)")
-        println("therefore double's value is \(double)")
-        if double % 1.0 == 0 {
-            println("remainder is 0")
-            inningCounter.count = Int(double)
-            inningLabel.text = ("\(inningCounter.count)")
-        } else {
-            println("remainder is not 0")
-            double = double - 0.5
-            println("doubles new value is \(double)")
-            inningCounter.count = Int(double)
-            println("The value to be displayed is \(inningCounter.count)")
-            inningLabel.text = ("\(inningCounter.count)")
-
-        }
-        //update the arrows
-        println("isTopOfInning = \(isTopOfInning)")
         if isTopOfInning == true {
-            println("Since isTopOfInning = \(isTopOfInning),")
+            downArrowOverride.hidden = false
+            upArrowOverride.hidden = true
+            inningCounter.count = Int(inningStepper.value)
+            inningLabel.text = String(inningCounter.count)
+        } else {
+            inningCounter.count = Int(inningStepper.value + 0.5)
+            inningLabel.text = String(inningCounter.count)
             upArrowOverride.hidden = false
             downArrowOverride.hidden = true
-            println("upArrowOverride.hidden = \(upArrowOverride.hidden) and downArrowOverride.hidden = \(downArrowOverride.hidden)")
-        } else {
-            println("should hide up arrow and reveal down arrow")
-            upArrowOverride.hidden = true
-            //println("upArrowOverride.hidden = \(upArrowOverride.hidden)")
-            downArrowOverride.hidden = false
-            println("upArrowOverride.hidden = \(upArrowOverride.hidden)")
-            println("upArrowOverride.hidden = \(upArrowOverride.hidden) and downArrowOverride.hidden = \(downArrowOverride.hidden)")
         }
-
+        isTopOfInning = !isTopOfInning
+        println("isTopOfInning is \(isTopOfInning)")
     }
     
     @IBAction func outsOveridden(sender: AnyObject) {

@@ -72,6 +72,7 @@ class ViewController: UIViewController {
     var awayPitcherTotalStrikes = Counter()
     
     var isTop = true
+    var viewWillAppearHasBeenCalled = 0
     
     var pitchCounterIsOn = true
     var vibrateIsOn = false
@@ -487,6 +488,7 @@ class ViewController: UIViewController {
     }
     
     func updateInnings (){
+        inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
         myUndoManager.registerUndoWithTarget(self, selector: "minusInning", object: nil)
         oldValueOfStrikes = strikeCounter.count
         oldValueOfBalls = ballCounter.count
@@ -505,7 +507,7 @@ class ViewController: UIViewController {
             upArrow.hidden = true
         } else {
             inningLabelCounter.increment()
-            inningsLabel.setTitle(String(format: "\(1 + inningLabelCounter.count)"), forState: nil)
+            inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
             outCounter.reset()
             resetCount()
             outsButtonLabel.setTitle(String(format: "\(outCounter.count) Out"), forState: nil)
@@ -609,8 +611,24 @@ class ViewController: UIViewController {
             outCounter.count = previousController.outCounter.count
             updateOuts()
             inningLabelCounter.count = previousController.inningCounter.count
-            inningsLabel.setTitle(String(format: "\(1 + inningLabelCounter.count)"), forState: nil)
+            println("inningLabelCounter has a value of \(inningLabelCounter.count)")
+            if inningLabelCounter.count == 0 {
+                inningLabelCounter.increment()
+                println("inningLabelCounter now has a value of \(inningLabelCounter.count)")
 
+            }
+            isTop == previousController.isTopOfInning
+            if isTop == true {
+                inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
+                upArrow.hidden = false
+                downArrow.hidden = true
+            } else {
+                inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
+                downArrow.hidden = false
+                upArrow.hidden = true
+            }
+            
+            viewWillAppearHasBeenCalled = previousController.viewWillAppearHasBeenCalled
             
         }
         
@@ -637,6 +655,7 @@ class ViewController: UIViewController {
         //}
         
         thisManualOverrideViewController.isTopOfInning = isTop
+        thisManualOverrideViewController.viewWillAppearHasBeenCalled = viewWillAppearHasBeenCalled
     }
 
     override func viewDidDisappear(animated: Bool) {
