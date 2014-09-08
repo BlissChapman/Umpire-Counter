@@ -137,6 +137,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clockTapped(sender: UIButton) {
+        //clockButton.userInteractionEnabled = true
+        
         println(clockButton.titleLabel)
         println(clockString)
         if sender.titleLabel == "START CLOCK" {
@@ -595,6 +597,7 @@ class ViewController: UIViewController {
     }*/
     
     @IBAction func unwindBackToMainView(segue: UIStoryboardSegue) {
+        myUndoManager.removeAllActions()
         println("unwinding from segue")
         if segue.sourceViewController.isKindOfClass(ManualOverrideViewController) {
             let previousController = segue.sourceViewController as ManualOverrideViewController
@@ -623,7 +626,7 @@ class ViewController: UIViewController {
 
             }
             //this value is not being updated properly. Fix this and all problems should work.  Arrows should display bottom and top of innings properly.
-            isTop == previousController.isTopOfInning
+            isTop = previousController.isTopOfInning
             println("isTop = \(isTop)")
             if isTop == true {
                 inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)

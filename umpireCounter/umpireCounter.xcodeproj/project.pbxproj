@@ -19,6 +19,7 @@
 		8E9DFEDB19AE82530041AF9B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9DFEDA19AE82530041AF9B /* AudioToolbox.framework */; };
 		8EA737F919AE522D00001D47 /* downarrowFINALFINAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA737F819AE522D00001D47 /* downarrowFINALFINAL.png */; };
 		8EA737FB19AE523400001D47 /* uparrowFINALFINAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA737FA19AE523400001D47 /* uparrowFINALFINAL.png */; };
+		A585CBFB19BE70120060BFBF /* settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A585CBFA19BE70120060BFBF /* settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		8E9DFEDA19AE82530041AF9B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8EA737F819AE522D00001D47 /* downarrowFINALFINAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downarrowFINALFINAL.png; sourceTree = "<group>"; };
 		8EA737FA19AE523400001D47 /* uparrowFINALFINAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uparrowFINALFINAL.png; sourceTree = "<group>"; };
+		A585CBFA19BE70120060BFBF /* settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = settings.bundle; path = ../settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		8E73D1D419AA5F1200A4B25E /* umpireCounter */ = {
 			isa = PBXGroup;
 			children = (
+				A585CBFA19BE70120060BFBF /* settings.bundle */,
 				8E73D1D719AA5F1200A4B25E /* AppDelegate.swift */,
 				8E73D1D919AA5F1200A4B25E /* ViewController.swift */,
 				8E40355F19B1EA1C00A911AE /* ManualOverrideViewController.swift */,
@@ -211,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A585CBFB19BE70120060BFBF /* settings.bundle in Resources */,
 				8EA737FB19AE523400001D47 /* uparrowFINALFINAL.png in Resources */,
 				8E4A49D019AE270000F334C9 /* BackgroundOverrideFinal.png in Resources */,
 				8E4D4C9A19BABD6200A4A911 /* manualOverrideUpArrow.png in Resources */,
