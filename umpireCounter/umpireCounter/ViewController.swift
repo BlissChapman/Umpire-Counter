@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     var awayPitcherTotalStrikes = Counter()
     
     var isTop = true
-    var viewWillAppearHasBeenCalled = 0
+    var viewWillAppearHasBeenCalled = false
     
     var pitchCounterIsOn = true
     var vibrateIsOn = false
@@ -488,8 +488,13 @@ class ViewController: UIViewController {
     }
     
     func updateInnings (){
-        inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
         myUndoManager.registerUndoWithTarget(self, selector: "minusInning", object: nil)
+        if inningLabelCounter.count == 0 {
+            inningLabelCounter.increment()
+            inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
+            println(inningLabelCounter.count)
+        }
+        inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
         oldValueOfStrikes = strikeCounter.count
         oldValueOfBalls = ballCounter.count
         if inningLabelCounter.count >= 8 && homeTeamCounter.count != awayTeamCounter.count {
@@ -618,7 +623,7 @@ class ViewController: UIViewController {
 
             }
             //this value is not being updated properly. Fix this and all problems should work.  Arrows should display bottom and top of innings properly.
-            isTop == previousController.isTopOfInning.boolValue
+            isTop == previousController.isTopOfInning
             println("isTop = \(isTop)")
             if isTop == true {
                 inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
@@ -631,7 +636,6 @@ class ViewController: UIViewController {
             }
             
             viewWillAppearHasBeenCalled = previousController.viewWillAppearHasBeenCalled
-            
         }
         
     }

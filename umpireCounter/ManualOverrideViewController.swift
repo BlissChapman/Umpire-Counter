@@ -62,7 +62,7 @@ class ManualOverrideViewController: UIViewController {
     var awayPitcherTotalBalls = Counter()
     
     var isTopOfInning = true
-    var viewWillAppearHasBeenCalled = 0
+    var viewWillAppearHasBeenCalled = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,9 +84,9 @@ class ManualOverrideViewController: UIViewController {
         //if my variables have the correct values, all that is left is to update the labels and the values the steppers will start counting from to match those of the current game
         println("inside viewWillAppear...")
         
-        if viewWillAppearHasBeenCalled == 0 {
+        if viewWillAppearHasBeenCalled == false {
             println("viewWillAppearHasBeenCalled = 0")
-            inningLabel.text = String(inningCounter.count + 1)
+            inningLabel.text = String(inningCounter.count)
             if isTopOfInning == true {
                 upArrowOverride.hidden = false
                 downArrowOverride.hidden = true
@@ -107,7 +107,7 @@ class ManualOverrideViewController: UIViewController {
                 downArrowOverride.hidden = false
             }
         }
-        viewWillAppearHasBeenCalled++
+        viewWillAppearHasBeenCalled = true
         println("the new value of viewWillAppearHasBeenCalled = \(viewWillAppearHasBeenCalled)")
         
         updateStartingStepperValues()
@@ -141,7 +141,7 @@ class ManualOverrideViewController: UIViewController {
     func updateStartingStepperValues (){
         homeTeamStepper.value = Double(homeTeamCounter.count)
         awayTeamStepper.value = Double(awayTeamCounter.count)
-        if viewWillAppearHasBeenCalled == 0{
+        if viewWillAppearHasBeenCalled == false {
             inningStepper.value = Double(inningCounter.count + 1)
         } else {
             inningStepper.value = Double(inningCounter.count)
