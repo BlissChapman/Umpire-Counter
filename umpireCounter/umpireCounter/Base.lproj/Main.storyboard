@@ -1441,8 +1441,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                    <rect key="frame" x="16" y="221" width="173" height="18"/>
                                 </variation>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="99" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vTC-ub-rBt">
@@ -1464,8 +1465,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                    <rect key="frame" x="16" y="394" width="173" height="18"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Strikes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-xl-MrC">
@@ -1473,8 +1475,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                    <rect key="frame" x="16" y="477" width="173" height="18"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Balls" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZQ-cl-LCk">
@@ -1482,13 +1485,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                    <rect key="frame" x="30" y="536" width="159" height="18"/>
                                 </variation>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="1hQ-lV-gB0">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="204" y="333" width="94" height="29"/>
+                                </variation>
                                 <connections>
                                     <action selector="ballsOveridden:" destination="SwG-qM-TCV" eventType="valueChanged" id="17f-GX-f7C"/>
                                 </connections>
@@ -1496,6 +1503,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="hAl-Gh-ncR">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="204" y="388" width="94" height="29"/>
+                                </variation>
                                 <connections>
                                     <action selector="strikesOveridden:" destination="SwG-qM-TCV" eventType="valueChanged" id="vE9-7X-E42"/>
                                 </connections>
@@ -1503,6 +1513,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="199" translatesAutoresizingMaskIntoConstraints="NO" id="2Cc-Rr-oXc">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="204" y="471" width="94" height="29"/>
+                                </variation>
                                 <connections>
                                     <action selector="totalStrikesOveridden:" destination="SwG-qM-TCV" eventType="valueChanged" id="nUm-iv-FMd"/>
                                 </connections>
@@ -1519,6 +1532,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="199" translatesAutoresizingMaskIntoConstraints="NO" id="tDA-0N-Joo">
                                 <rect key="frame" x="-47" y="-14" width="94" height="29"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="204" y="530" width="94" height="29"/>
+                                </variation>
                                 <connections>
                                     <action selector="totalBallsOveridden:" destination="SwG-qM-TCV" eventType="valueChanged" id="3nU-Dh-ipi"/>
                                 </connections>
@@ -1535,8 +1551,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                    <rect key="frame" x="20" y="274" width="169" height="18"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balls" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JND-g3-KtX">
@@ -1544,8 +1561,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                    <rect key="frame" x="16" y="339" width="173" height="18"/>
                                 </variation>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="VvJ-aJ-jCZ">
@@ -1627,8 +1645,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="28"/>
+                                    <rect key="frame" x="283" y="328" width="128" height="40"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txq-y1-oHt">
@@ -1726,14 +1745,16 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="1nl-Mf-kdK" firstAttribute="centerY" secondItem="vTC-ub-rBt" secondAttribute="centerY" id="4z3-hc-CWe">
-                                <variation key="widthClass=compact" constant="5.5"/>
+                                <variation key="widthClass=compact" constant="-0.5"/>
                             </constraint>
                             <constraint firstItem="ywh-ok-zlN" firstAttribute="top" secondItem="UUD-po-nXD" secondAttribute="bottom" constant="28" id="6an-I6-ilS">
                                 <variation key="widthClass=compact" constant="19"/>
                             </constraint>
-                            <constraint firstItem="fZi-Dm-bwg" firstAttribute="leading" secondItem="s6h-8t-BrG" secondAttribute="leading" id="6wN-mJ-atW"/>
+                            <constraint firstItem="fZi-Dm-bwg" firstAttribute="leading" secondItem="s6h-8t-BrG" secondAttribute="leading" id="6wN-mJ-atW">
+                                <variation key="widthClass=compact" constant="141"/>
+                            </constraint>
                             <constraint firstItem="NBO-kG-AIe" firstAttribute="top" secondItem="nWT-sa-tX9" secondAttribute="bottom" constant="20" id="74E-QI-t1q">
-                                <variation key="widthClass=compact" constant="16"/>
+                                <variation key="widthClass=compact" constant="17"/>
                             </constraint>
                             <constraint firstItem="NBO-kG-AIe" firstAttribute="top" secondItem="RVv-l7-u4W" secondAttribute="top" constant="269" id="82m-9a-KIt">
                                 <variation key="widthClass=compact" constant="263"/>
@@ -1742,7 +1763,7 @@
                                 <variation key="widthClass=compact" constant="-5"/>
                             </constraint>
                             <constraint firstItem="nWT-sa-tX9" firstAttribute="leading" secondItem="vTC-ub-rBt" secondAttribute="trailing" constant="67" id="9a0-hK-YrD">
-                                <variation key="widthClass=compact" constant="56"/>
+                                <variation key="widthClass=compact" constant="78"/>
                             </constraint>
                             <constraint firstItem="bC6-kE-1Yo" firstAttribute="leading" secondItem="RVv-l7-u4W" secondAttribute="leadingMargin" constant="23" id="A5R-nL-g5c">
                                 <variation key="widthClass=compact" constant="0.0"/>
@@ -1753,7 +1774,9 @@
                                 <variation key="widthClass=compact" constant="-5"/>
                             </constraint>
                             <constraint firstItem="JoF-d9-ZFg" firstAttribute="leading" secondItem="RVv-l7-u4W" secondAttribute="leading" constant="-100" id="FDM-u3-u9G"/>
-                            <constraint firstItem="I5U-bG-taT" firstAttribute="centerX" secondItem="JND-g3-KtX" secondAttribute="centerX" id="HVk-Ab-hSz"/>
+                            <constraint firstItem="I5U-bG-taT" firstAttribute="centerX" secondItem="JND-g3-KtX" secondAttribute="centerX" id="HVk-Ab-hSz">
+                                <variation key="widthClass=compact" constant="2"/>
+                            </constraint>
                             <constraint firstItem="eMe-xl-MrC" firstAttribute="leading" secondItem="RVv-l7-u4W" secondAttribute="leadingMargin" constant="-75" id="IZk-a3-IjR">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -1761,13 +1784,13 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="9nO-OJ-zOd" secondAttribute="trailing" constant="22" id="KqB-aY-49Z">
-                                <variation key="widthClass=compact" constant="0.0"/>
+                                <variation key="widthClass=compact" constant="-27"/>
                             </constraint>
                             <constraint firstItem="rd3-Bn-1iI" firstAttribute="centerY" secondItem="1nl-Mf-kdK" secondAttribute="centerY" id="MZr-ey-EMS">
-                                <variation key="widthClass=compact" constant="0.5"/>
+                                <variation key="widthClass=compact" constant="3"/>
                             </constraint>
                             <constraint firstItem="txq-y1-oHt" firstAttribute="top" secondItem="9nO-OJ-zOd" secondAttribute="bottom" constant="36" id="McB-TS-2Iq">
-                                <variation key="widthClass=compact" constant="15"/>
+                                <variation key="widthClass=compact" constant="16"/>
                             </constraint>
                             <constraint firstItem="txq-y1-oHt" firstAttribute="leading" secondItem="1nl-Mf-kdK" secondAttribute="leading" id="Mog-wg-esd">
                                 <variation key="widthClass=compact" constant="0.0"/>
@@ -1798,7 +1821,7 @@
                             </constraint>
                             <constraint firstItem="ywh-ok-zlN" firstAttribute="trailing" secondItem="UUD-po-nXD" secondAttribute="trailing" id="Xiy-O9-Wy2"/>
                             <constraint firstItem="NBO-kG-AIe" firstAttribute="top" secondItem="1nl-Mf-kdK" secondAttribute="bottom" constant="32" id="c0X-Gz-n8D">
-                                <variation key="widthClass=compact" constant="8"/>
+                                <variation key="widthClass=compact" constant="14"/>
                             </constraint>
                             <constraint firstItem="NBO-kG-AIe" firstAttribute="leading" secondItem="MuV-Vr-anU" secondAttribute="trailing" constant="8" symbolic="YES" id="co9-lt-BXx">
                                 <variation key="widthClass=compact" constant="13"/>
@@ -1811,7 +1834,7 @@
                             </constraint>
                             <constraint firstItem="MuV-Vr-anU" firstAttribute="leading" secondItem="vTC-ub-rBt" secondAttribute="leading" id="dRh-PM-Ic5"/>
                             <constraint firstItem="9nO-OJ-zOd" firstAttribute="leading" secondItem="1hQ-lV-gB0" secondAttribute="trailing" constant="8" symbolic="YES" id="dZk-GF-pXH">
-                                <variation key="widthClass=compact" constant="13"/>
+                                <variation key="widthClass=compact" constant="-15"/>
                             </constraint>
                             <constraint firstItem="ywh-ok-zlN" firstAttribute="leading" secondItem="UUD-po-nXD" secondAttribute="leading" id="e2h-Y2-MT8"/>
                             <constraint firstItem="QZQ-cl-LCk" firstAttribute="top" secondItem="eMe-xl-MrC" secondAttribute="bottom" constant="35" id="e7E-6x-7Z3">
@@ -1837,10 +1860,10 @@
                                 <variation key="widthClass=compact" constant="15"/>
                             </constraint>
                             <constraint firstItem="1nl-Mf-kdK" firstAttribute="top" secondItem="l0v-f2-4nm" secondAttribute="bottom" constant="44" id="mrR-Gt-eLT">
-                                <variation key="widthClass=compact" constant="35"/>
+                                <variation key="widthClass=compact" constant="29"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="nWT-sa-tX9" secondAttribute="trailing" constant="-5" id="mw3-E2-zxq">
-                                <variation key="widthClass=compact" constant="6"/>
+                                <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
                             <constraint firstItem="tDA-0N-Joo" firstAttribute="top" secondItem="2Cc-Rr-oXc" secondAttribute="bottom" constant="24" id="niz-8v-1gf">
                                 <variation key="widthClass=compact" constant="30"/>
@@ -1848,9 +1871,11 @@
                             <constraint firstItem="hAl-Gh-ncR" firstAttribute="leading" secondItem="qtF-mk-jbT" secondAttribute="trailing" constant="64" id="nmS-YV-yDy">
                                 <variation key="widthClass=compact" constant="15"/>
                             </constraint>
-                            <constraint firstItem="hAl-Gh-ncR" firstAttribute="leading" secondItem="1hQ-lV-gB0" secondAttribute="leading" id="oOM-nP-EAa"/>
+                            <constraint firstItem="hAl-Gh-ncR" firstAttribute="leading" secondItem="1hQ-lV-gB0" secondAttribute="leading" id="oOM-nP-EAa">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="2Cc-Rr-oXc" firstAttribute="centerY" secondItem="UUD-po-nXD" secondAttribute="centerY" id="orY-F3-t8F">
-                                <variation key="widthClass=compact" constant="-0.5"/>
+                                <variation key="widthClass=compact" constant="-1.5"/>
                             </constraint>
                             <constraint firstItem="eMe-xl-MrC" firstAttribute="top" secondItem="qtF-mk-jbT" secondAttribute="bottom" constant="55" id="p0N-5B-fUo">
                                 <variation key="widthClass=compact" constant="65"/>
@@ -1859,7 +1884,7 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="9nO-OJ-zOd" firstAttribute="top" secondItem="NBO-kG-AIe" secondAttribute="bottom" constant="53" id="pL5-tu-efe">
-                                <variation key="widthClass=compact" constant="26"/>
+                                <variation key="widthClass=compact" constant="25"/>
                             </constraint>
                             <constraint firstItem="n5K-SQ-ab4" firstAttribute="leading" secondItem="JND-g3-KtX" secondAttribute="leading" id="pXl-kI-etl">
                                 <variation key="widthClass=compact" constant="0.0"/>
@@ -1871,7 +1896,7 @@
                                 <variation key="widthClass=compact" constant="34"/>
                             </constraint>
                             <constraint firstItem="ykA-Ys-lPs" firstAttribute="top" secondItem="tDA-0N-Joo" secondAttribute="bottom" constant="36" id="rEG-eV-iBH">
-                                <variation key="widthClass=compact" constant="40"/>
+                                <variation key="widthClass=compact" constant="41"/>
                             </constraint>
                             <constraint firstItem="JoF-d9-ZFg" firstAttribute="top" secondItem="RVv-l7-u4W" secondAttribute="topMargin" constant="38" id="s84-oG-k8l"/>
                             <constraint firstItem="vTC-ub-rBt" firstAttribute="leading" secondItem="XRN-pm-o4N" secondAttribute="leading" id="tB9-et-wgH">
@@ -1880,7 +1905,9 @@
                             <constraint firstItem="XRN-pm-o4N" firstAttribute="leading" secondItem="VvJ-aJ-jCZ" secondAttribute="leading" id="tac-fb-9Bv">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="fZi-Dm-bwg" firstAttribute="top" secondItem="qgD-Tu-g29" secondAttribute="bottom" constant="8" symbolic="YES" id="tgS-fc-WbI"/>
+                            <constraint firstItem="fZi-Dm-bwg" firstAttribute="top" secondItem="qgD-Tu-g29" secondAttribute="bottom" constant="8" symbolic="YES" id="tgS-fc-WbI">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="txq-y1-oHt" firstAttribute="trailing" secondItem="1nl-Mf-kdK" secondAttribute="trailing" id="uEl-hs-Oau">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -1894,16 +1921,16 @@
                                 <variation key="widthClass=compact" constant="41"/>
                             </constraint>
                             <constraint firstItem="txq-y1-oHt" firstAttribute="top" secondItem="hAl-Gh-ncR" secondAttribute="top" id="yuI-oC-lgh">
-                                <variation key="widthClass=compact" constant="-5"/>
+                                <variation key="widthClass=compact" constant="-4"/>
                             </constraint>
                             <constraint firstItem="txq-y1-oHt" firstAttribute="trailing" secondItem="UUD-po-nXD" secondAttribute="trailing" id="yyR-82-d2x">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="tDA-0N-Joo" firstAttribute="centerY" secondItem="ywh-ok-zlN" secondAttribute="centerY" id="zqd-LT-DWK">
-                                <variation key="widthClass=compact" constant="-0.5"/>
+                                <variation key="widthClass=compact" constant="-1.5"/>
                             </constraint>
                             <constraint firstItem="nWT-sa-tX9" firstAttribute="top" secondItem="l0v-f2-4nm" secondAttribute="bottom" constant="29" id="zqk-VO-7r1">
-                                <variation key="widthClass=compact" constant="35"/>
+                                <variation key="widthClass=compact" constant="34"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
