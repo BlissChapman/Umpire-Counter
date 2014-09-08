@@ -611,13 +611,15 @@ class ViewController: UIViewController {
             outCounter.count = previousController.outCounter.count
             updateOuts()
             inningLabelCounter.count = previousController.inningCounter.count
-            println("inningLabelCounter has a value of \(inningLabelCounter.count)")
+            //println("inningLabelCounter has a value of \(inningLabelCounter.count)")
             if inningLabelCounter.count == 0 {
                 inningLabelCounter.increment()
-                println("inningLabelCounter now has a value of \(inningLabelCounter.count)")
+                //println("inningLabelCounter now has a value of \(inningLabelCounter.count)")
 
             }
-            isTop == previousController.isTopOfInning
+            //this value is not being updated properly. Fix this and all problems should work.  Arrows should display bottom and top of innings properly.
+            isTop == previousController.isTopOfInning.boolValue
+            println("isTop = \(isTop)")
             if isTop == true {
                 inningsLabel.setTitle(String(format: "\(inningLabelCounter.count)"), forState: nil)
                 upArrow.hidden = false

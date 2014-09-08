@@ -95,7 +95,7 @@ class ManualOverrideViewController: UIViewController {
                 downArrowOverride.hidden = false
             }
         } else {
-            println("viewWillAppearHasBeenCalled = 1")
+            println("viewWillAppearHasBeenCalled = \(viewWillAppearHasBeenCalled)")
             
             println(inningCounter.count)
             inningLabel.text = String(inningCounter.count)
@@ -141,7 +141,12 @@ class ManualOverrideViewController: UIViewController {
     func updateStartingStepperValues (){
         homeTeamStepper.value = Double(homeTeamCounter.count)
         awayTeamStepper.value = Double(awayTeamCounter.count)
-        inningStepper.value = Double(inningCounter.count + 1)
+        if viewWillAppearHasBeenCalled == 0{
+            inningStepper.value = Double(inningCounter.count + 1)
+        } else {
+            inningStepper.value = Double(inningCounter.count)
+        }
+        
         outsStepper.value = Double(outCounter.count)
         ballsStepper.value = Double(ballCounter.count)
         strikesStepper.value = Double(strikeCounter.count)
