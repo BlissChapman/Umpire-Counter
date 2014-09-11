@@ -75,7 +75,7 @@ class ViewController: UIViewController {
     var viewWillAppearHasBeenCalled = false
     
     //var pitchCounterIsOn = true
-    var vibrateIsOn = false
+    //var vibrateIsOn = false
     var myMail: MFMailComposeViewController!
     
     var myUndoManager = NSUndoManager()
@@ -84,15 +84,19 @@ class ViewController: UIViewController {
 
     
     
-    //func registerDefaults
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        println("in viewDidLoad")
+        /*
         var userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.synchronize()
-        var pitchCounterIsOn = userDefaults.valueForKey("pitchCounterIsOn")
-    /*
+        var pitchCounterIsOn = userDefaults.boolForKey("pitchCounterIsOn")
+        //documentation for boolForKey says, "If a boolean value is associated with defaultName in the user defaults, that value is returned. Otherwise, NO is returned."
+       // http://stackoverflow.com/questions/24710855/swift-problems-nsuserdefault-and-settings-bundle-not-responding
+        //pitchCounterIsOn.boolValue = true
+    
         if pitchCounterIsOn as Bool == true {
             println("pitchCounterIsOn is true")
             totalBalls.hidden = false
@@ -105,15 +109,9 @@ class ViewController: UIViewController {
             totalStrikes.hidden = true
             resetPitchCountButton.hidden = true
             resetPitchCountButton.userInteractionEnabled = false
-        }
-        */
-        
-        println("in viewDidLoad")
-        
-        println("The value of pitchCounterIsOn is : \(pitchCounterIsOn)")
-        
+        }*/
     }
-    
+
     
     @IBAction func undoButtonTapped(sender: AnyObject) {
         //.registerUndoWithTarget
