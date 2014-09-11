@@ -1359,7 +1359,7 @@
                         </button>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="M0p-S1-Q1x">
                             <connections>
-                                <action selector="share:" destination="vXZ-lx-hvc" id="bvp-Ad-neW"/>
+                                <action selector="share:" destination="vXZ-lx-hvc" id="TdV-53-3Q4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

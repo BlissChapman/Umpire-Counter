@@ -5,28 +5,28 @@
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
-			<key>Preferences</key>
-			<string>Group</string>
+			<key>Title</key>
+			<string>Preferences</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<true/>
-			<key>track_pitch_count_preference</key>
-			<string>enabled_preference</string>
-			<key>Track Pitch Count</key>
-			<string>Enabled</string>
+			<false/>
+			<key>Key</key>
+			<string>vibrateIsOn</string>
+			<key>Title</key>
+			<string>Vibrate</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
 			<true/>
-			<key>vibrate_preferences</key>
-			<string>enabled_preference</string>
-			<key>Vibrate</key>
-			<string>Enabled</string>
+			<key>Key</key>
+			<string>pitchCounterIsOn</string>
+			<key>Title</key>
+			<string>Track Pitch Count</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>

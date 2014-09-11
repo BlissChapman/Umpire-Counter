@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     var isTop = true
     var viewWillAppearHasBeenCalled = false
     
-    var pitchCounterIsOn = true
+    //var pitchCounterIsOn = true
     var vibrateIsOn = false
     var myMail: MFMailComposeViewController!
     
@@ -84,24 +84,34 @@ class ViewController: UIViewController {
 
     
     
-    
+    //func registerDefaults
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       /*
-        if pitchCounterIsOn == true {
+        
+        var userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.synchronize()
+        var pitchCounterIsOn = userDefaults.valueForKey("pitchCounterIsOn")
+    /*
+        if pitchCounterIsOn as Bool == true {
+            println("pitchCounterIsOn is true")
             totalBalls.hidden = false
             totalStrikes.hidden = false
             resetPitchCountButton.hidden = false
-            resetPitchCountButton.userInteractionEnabled = false
-        } else if pitchCounterIsOn == false {
+            resetPitchCountButton.userInteractionEnabled = true
+        } else if pitchCounterIsOn as Bool == false {
+            println("pitchCounterIsOn is false")
             totalBalls.hidden = true
             totalStrikes.hidden = true
             resetPitchCountButton.hidden = true
-            resetPitchCountButton.userInteractionEnabled = true
-        }*/
+            resetPitchCountButton.userInteractionEnabled = false
+        }
+        */
         
-        println(clockString)
+        println("in viewDidLoad")
+        
+        println("The value of pitchCounterIsOn is : \(pitchCounterIsOn)")
+        
     }
     
     
@@ -331,6 +341,12 @@ class ViewController: UIViewController {
     @IBAction func addOut(sender: AnyObject) {
         myUndoManager.registerUndoWithTarget(self, selector: "undoAddOut", object: nil)
         vibrate()
+        if isTop == true {
+            homePitcherTotalStrikes.increment()
+        } else {
+            awayPitcherTotalStrikes.increment()
+        }
+        reloadTotalBallsAndStrikes()
         if outCounter.count == 0 {
             outCounter.increment()
             resetCount()
@@ -551,25 +567,36 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    //myMail.mailComposeDelegate = self
-    /*
-    func share(sender: UIBarButtonItem) {
-        println ("share tapped")
-        if(MFMailComposeViewController.canSendMail()) {
-            myMail = MFMailComposeViewController()
-            myMail.setSubject("Score Update")
-        
-            if downArrow.hidden == true {
-                var sentfrom = "Home: \(homeTeamCounter.count).  Away: \(awayTeamCounter.count).  Top of the \(inningLabelCounter.count), \(outCounter.count) out, \(ballCounter.count)-\(strikeCounter.count) count on the batter.  Sent from StrikeOut for iPhone."
-                myMail.setMessageBody(sentfrom, isHTML: true)
-            } else if upArrow.hidden == true {
-                var sentfrom = "Home: \(homeTeamCounter.count).  Away: \(awayTeamCounter.count).  Bottom of the \(inningLabelCounter.count), \(outCounter.count) out, \(ballCounter.count)-\(strikeCounter.count) count on the batter.  Sent from StrikeOut for iPhone."
-                myMail.setMessageBody(sentfrom, isHTML: true)
+    @IBAction func share(sender: UIBarButtonItem) {
+            println ("share tapped")
+            if(MFMailComposeViewController.canSendMail()) {
+                myMail = MFMailComposeViewController()
+                myMail.setSubject("Score Update")
+                
+                //experimental
+                var recipients = ["bliss.chapman@gmail.com"]
+                myMail.setToRecipients(recipients)
+                
+                var messageBody = "testing"
+                println(messageBody)
+                myMail.setMessageBody(messageBody, isHTML: false)
+
+                
+                if isTop == true {
+                    println("should now compose message body")
+                    
+                    
+                    //"Home: \(homeTeamCounter.count).  Away: \(awayTeamCounter.count).  Top of the \(inningLabelCounter.count), \(outCounter.count) out, \(ballCounter.count)-\(strikeCounter.count) count on the batter.  Sent from StrikeOut for iPhone."
+                    //myMail.setMessageBody("testing", isHTML: true)
+                } else if isTop == false {
+                    //println("should now compose message body")
+                    //var messageBody = "testing"
+                    //"Home: \(homeTeamCounter.count).  Away: \(awayTeamCounter.count).  Bottom of the \(inningLabelCounter.count), \(outCounter.count) out, \(ballCounter.count)-\(strikeCounter.count) count on the batter.  Sent from StrikeOut for iPhone."
+                    //myMail.setMessageBody(messageBody, isHTML: true)
+                }
+                self.presentViewController(myMail, animated: true, completion: nil)
+                
             }
-            self.presentViewController(myMail, animated: true, completion: nil)
-        
-        }
     }
     
     func mailComposeController(controller: MFMailComposeViewController!,
@@ -586,15 +613,7 @@ class ViewController: UIViewController {
         
             self.dismissViewControllerAnimated(true, completion: nil)
         
-    }*/
-    /*
-    if ([segue.sourceViewController isKindOfClass:[NTRColorsTableViewController class]]) {
-    NTRColorsTableViewController *colorsViewConroller = segue.sourceViewController;
-    // if the user clicked Cancel, we don't want to change the color
-    if (colorsViewConroller.selectedColor) {
-    self.view.backgroundColor = colorsViewConroller.selectedColor;
     }
-    }*/
     
     @IBAction func unwindBackToMainView(segue: UIStoryboardSegue) {
         myUndoManager.removeAllActions()
