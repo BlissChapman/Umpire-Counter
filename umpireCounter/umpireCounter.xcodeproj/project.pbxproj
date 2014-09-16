@@ -20,6 +20,9 @@
 		8EA737F919AE522D00001D47 /* downarrowFINALFINAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA737F819AE522D00001D47 /* downarrowFINALFINAL.png */; };
 		8EA737FB19AE523400001D47 /* uparrowFINALFINAL.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA737FA19AE523400001D47 /* uparrowFINALFINAL.png */; };
 		A52099C219C132AC00AD3EA7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A52099C119C132AC00AD3EA7 /* Settings.bundle */; };
+		A5DE4B2519C8BADD0049F0D5 /* StrikeOut Icon - 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DE4B2419C8BADD0049F0D5 /* StrikeOut Icon - 120x120.png */; };
+		A5DE4B2719C8BD350049F0D5 /* StrikeOut Icon - 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DE4B2619C8BD350049F0D5 /* StrikeOut Icon - 80x80.png */; };
+		A5DE4B2919C8BDDB0049F0D5 /* StrikeOut Icon - 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DE4B2819C8BDDB0049F0D5 /* StrikeOut Icon - 58x58.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		8EA737F819AE522D00001D47 /* downarrowFINALFINAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downarrowFINALFINAL.png; sourceTree = "<group>"; };
 		8EA737FA19AE523400001D47 /* uparrowFINALFINAL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uparrowFINALFINAL.png; sourceTree = "<group>"; };
 		A52099C119C132AC00AD3EA7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A5DE4B2419C8BADD0049F0D5 /* StrikeOut Icon - 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StrikeOut Icon - 120x120.png"; sourceTree = "<group>"; };
+		A5DE4B2619C8BD350049F0D5 /* StrikeOut Icon - 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StrikeOut Icon - 80x80.png"; sourceTree = "<group>"; };
+		A5DE4B2819C8BDDB0049F0D5 /* StrikeOut Icon - 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StrikeOut Icon - 58x58.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 		8E73D1D519AA5F1200A4B25E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5DE4B2819C8BDDB0049F0D5 /* StrikeOut Icon - 58x58.png */,
+				A5DE4B2619C8BD350049F0D5 /* StrikeOut Icon - 80x80.png */,
+				A5DE4B2419C8BADD0049F0D5 /* StrikeOut Icon - 120x120.png */,
 				8E4D4C9919BABD6200A4A911 /* manualOverrideUpArrow.png */,
 				8E4D4C9B19BABD7600A4A911 /* manualOverrideDownArrow.png */,
 				8EA737FA19AE523400001D47 /* uparrowFINALFINAL.png */,
@@ -217,7 +226,10 @@
 				A52099C219C132AC00AD3EA7 /* Settings.bundle in Resources */,
 				8EA737FB19AE523400001D47 /* uparrowFINALFINAL.png in Resources */,
 				8E4A49D019AE270000F334C9 /* BackgroundOverrideFinal.png in Resources */,
+				A5DE4B2519C8BADD0049F0D5 /* StrikeOut Icon - 120x120.png in Resources */,
 				8E4D4C9A19BABD6200A4A911 /* manualOverrideUpArrow.png in Resources */,
+				A5DE4B2719C8BD350049F0D5 /* StrikeOut Icon - 80x80.png in Resources */,
+				A5DE4B2919C8BDDB0049F0D5 /* StrikeOut Icon - 58x58.png in Resources */,
 				8EA737F919AE522D00001D47 /* downarrowFINALFINAL.png in Resources */,
 				8E73D1DD19AA5F1200A4B25E /* Main.storyboard in Resources */,
 				8E73D1DF19AA5F1200A4B25E /* Images.xcassets in Resources */,
@@ -361,6 +373,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -373,6 +386,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
