@@ -88,6 +88,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //be sure settings can control pitch count on/off, vibrate on/off
         println("in viewDidLoad")
         /*
         var userDefaults = NSUserDefaults.standardUserDefaults()
@@ -396,6 +398,32 @@ class ViewController: UIViewController {
         }
     }
     
+   
+    
+    @IBAction func resetPitchCount(sender: AnyObject) {
+        /*println("the value of homePitcherTotalBalls.count is \(homePitcherTotalBalls.count)")
+        println("the value of homePitcherTotalStrikes.count is \(homePitcherTotalStrikes.count)")*/
+        
+        /*println("the value of oldValueOfTotalBalls is \(oldValueOfTotalBalls)")
+        println("the value of oldValueOfTotalStrikes is \(oldValueOfTotalStrikes)")*/
+        
+        myUndoManager.registerUndoWithTarget(self, selector: "resetPitchCountUndo", object: nil)
+        
+        if isTop == true {
+            oldValueOfTotalBalls = homePitcherTotalBalls.count
+            oldValueOfTotalStrikes = homePitcherTotalStrikes.count
+            homePitcherTotalBalls.reset()
+            homePitcherTotalStrikes.reset()
+           } else {
+            var oldValueOfTotalBalls = awayPitcherTotalBalls.count
+            var oldValueOfTotalStrikes = awayPitcherTotalStrikes.count
+            awayPitcherTotalBalls.reset()
+            awayPitcherTotalStrikes.reset()
+        }
+        reloadTotalBallsAndStrikes()
+    }
+    
+    
     func resetPitchCountUndo () {
         println("undoResetPitchCount has been called")
         println("My 'old value' for total strikes is now \(oldValueOfTotalStrikes)")
@@ -406,26 +434,6 @@ class ViewController: UIViewController {
         } else {
             awayPitcherTotalBalls.count = oldValueOfTotalBalls
             awayPitcherTotalStrikes.count = oldValueOfTotalStrikes
-        }
-        reloadTotalBallsAndStrikes()
-    }
-    
-    @IBAction func resetPitchCount(sender: AnyObject) {
-        myUndoManager.registerUndoWithTarget(self, selector: "resetPitchCountUndo", object: nil)
-        if isTop == true {
-            var oldValueOfTotalBalls = homePitcherTotalBalls.count
-            var oldValueOfTotalStrikes = homePitcherTotalStrikes.count
-            println(oldValueOfTotalStrikes)
-
-            homePitcherTotalBalls.reset()
-            homePitcherTotalStrikes.reset()
-            println("after the resets have been called on the label, the value of my strikes is still \(oldValueOfTotalStrikes)")
-        } else {
-            var oldValueOfTotalBalls = awayPitcherTotalBalls.count
-            var oldValueOfTotalStrikes = awayPitcherTotalStrikes.count
-            println("else method that shouldn't be called is being called and screwing with me.")
-            awayPitcherTotalBalls.reset()
-            awayPitcherTotalStrikes.reset()
         }
         reloadTotalBallsAndStrikes()
     }

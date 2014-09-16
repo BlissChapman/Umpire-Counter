@@ -319,7 +319,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="resetPitchCount:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3ww-Gl-13D"/>
+                                    <action selector="resetPitchCount:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="345-eg-ikA"/>
                                 </connections>
                             </button>
                             <imageView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrowFINALFINAL.png" translatesAutoresizingMaskIntoConstraints="NO" id="dvh-KR-Poj" customClass="viewController">

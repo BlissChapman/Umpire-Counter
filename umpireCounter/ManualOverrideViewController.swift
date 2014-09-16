@@ -86,7 +86,7 @@ class ManualOverrideViewController: UIViewController {
         
         if viewWillAppearHasBeenCalled == false {
             println("viewWillAppearHasBeenCalled = 0")
-            inningLabel.text = String(inningCounter.count)
+            inningLabel.text = String(inningCounter.count + 1)
             if isTopOfInning == true {
                 upArrowOverride.hidden = false
                 downArrowOverride.hidden = true
