@@ -575,6 +575,8 @@ class ViewController: UIViewController {
     
     @IBAction func share(sender: UIBarButtonItem) {
             println ("share tapped")
+            println("Mail Compose Result Sent . value = \(MFMailComposeResultSent.value)")
+        
             if(MFMailComposeViewController.canSendMail()) {
                 myMail = MFMailComposeViewController()
                 myMail.setSubject("Score Update")
@@ -584,42 +586,56 @@ class ViewController: UIViewController {
                 myMail.setToRecipients(recipients)
                 
                 var messageBody = "testing"
-                println(messageBody)
                 myMail.setMessageBody(messageBody, isHTML: false)
-
                 
                 if isTop == true {
                     println("should now compose message body")
                     
                     
                     //"Home: \(homeTeamCounter.count).  Away: \(awayTeamCounter.count).  Top of the \(inningLabelCounter.count), \(outCounter.count) out, \(ballCounter.count)-\(strikeCounter.count) count on the batter.  Sent from StrikeOut for iPhone."
-                    //myMail.setMessageBody("testing", isHTML: true)
+                    myMail.setMessageBody(messageBody, isHTML: true)
                 } else if isTop == false {
                     //println("should now compose message body")
                     //var messageBody = "testing"
                     //"Home: \(homeTeamCounter.count).  Away: \(awayTeamCounter.count).  Bottom of the \(inningLabelCounter.count), \(outCounter.count) out, \(ballCounter.count)-\(strikeCounter.count) count on the batter.  Sent from StrikeOut for iPhone."
-                    //myMail.setMessageBody(messageBody, isHTML: true)
+                    myMail.setMessageBody(messageBody, isHTML: true)
                 }
+
+               
+                
                 self.presentViewController(myMail, animated: true, completion: nil)
                 
+                func mailComposeController(controller: MFMailComposeViewController!,
+                    didFinishWithResult result: MFMailComposeResult,
+                    error: NSError!){
+                        println("In mailComposeController")
+                        
+                        switch(result.value){
+                        case MFMailComposeResultSent.value:
+                            println("Email sent")
+                            
+                        case MFMailComposeResultCancelled.value:
+                            println("mail canceled")
+                            
+                        case  MFMailComposeResultSaved.value:
+                            println("result saved")
+                            
+                        case MFMailComposeResultFailed.value:
+                            println("result failed")
+                            
+                        default:
+                            println("Whoops")
+                        }
+                        
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                        
+                }
             }
     }
     
-    func mailComposeController(controller: MFMailComposeViewController!,
-        didFinishWithResult result: MFMailComposeResult,
-        error: NSError!){
-        
-            switch(result.value){
-            case MFMailComposeResultSent.value:
-                println("Email sent")
-        
-            default:
-                println("Whoops")
-            }
-        
-            self.dismissViewControllerAnimated(true, completion: nil)
-        
-    }
+    //clicking the cancel button prints out, umpireCounter[1041:42292] _serviceViewControllerReady:error: Error Domain=_UIViewServiceErrorDomain Code=1 "The operation couldn’t be completed. (_UIViewServiceErrorDomain error 1.)" UserInfo=0x7fbace9866c0 {Canceled=service continuation}
+    
+    
     
     @IBAction func unwindBackToMainView(segue: UIStoryboardSegue) {
         myUndoManager.removeAllActions()
